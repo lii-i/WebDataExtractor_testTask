@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: webextractor_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: webextractor
+      POSTGRES_HOST_AUTH_METHOD: trust ля
+    ports:
+      - "8080:5432" 
+    restart: unless-stopped

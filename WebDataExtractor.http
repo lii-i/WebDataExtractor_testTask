@@ -1,0 +1,6 @@
+@WebDataExtractor_HostAddress = http://localhost:5139
+
+GET {{WebDataExtractor_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
