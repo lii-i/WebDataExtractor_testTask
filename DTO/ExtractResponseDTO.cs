@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 using System.Collections.Generic;
 
-public class ExtractionResponseDto
+public class ExtractResponseDTO
 {
     [JsonPropertyName("is_error")]
     public int IsError { get; set; }

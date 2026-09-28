@@ -1,12 +1,18 @@
-public void EndPoints(this WebApplication app){
+public static class MapEndPoints{
 
-    app.MapPost("/api/extractor", (
-        [FromBody] ExtractRequestDTO request
-        [FromService]  
+public static void EndPoints(this WebApplication app){
+
+    app.MapPost("/api/extractor", async (
+        ExtractRequestDTO request,
+        DataExtractionService deService
     )=>{
+        ExtractResponseDTO response = await deService.ProcessPayloadAsync(request); 
 
+        if(response.IsError == 1) return Results.BadRequest(response);
+
+        return Results.Ok(response);
     });
 
-
+}
 
 }

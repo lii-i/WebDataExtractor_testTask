@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 public class ExtractRequestDTO{
 
     [JsonPropertyName("selector")]
@@ -15,6 +17,6 @@ public class ExtractRequestDTO{
     [JsonPropertyName("key_bytes_b64")]
     public string KeyBytesB64 {get; set;}
 
-    [JsonPropertyName("page_64")]
+    [JsonPropertyName("page_b64")]
     public string Page64 {get; set;}
 }
